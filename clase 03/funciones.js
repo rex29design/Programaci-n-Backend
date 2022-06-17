@@ -39,3 +39,9 @@ mostrarSimple("Buenas noches Franco")
 const promedio = (a, b) => (a + b) / 2  // Se quitan llaves y el "return"//
 
 console.log(promedio(5, 10))
+
+const promedio2 = (a, b) => {  //Aquí no viene el return implicito, sino manual//
+    return a + b
+}
+
+console.log(promedio2(3, 6))

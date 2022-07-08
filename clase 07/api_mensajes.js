@@ -1,6 +1,9 @@
 const express = require("express")
 
 const app = express()
+app.use(express.json()) // Tanto este
+app.use(express.urlencoded({extended: true})) // como este se usan para trabajar con "body" que se ve en Postman
+
 const mensajes = [
     {id: 1, emisor: "r2", body: "Esto es un mensaje"},
     {id: 2, emisor: "Diego", body: "Esto es otro mensaje"}
@@ -19,12 +22,28 @@ app.get("/api/mensajes", (req, res) => {  // Se trabaja todo en un solo endpoint
 
 })
 
-app.post("/api/mensajes", (req, res) => {
+app.post("/api/mensajes", (req, res) => { 
     console.log("POST recibido")
+    console.log(req.body)
 
-    res.json("[POST] recibido")
+    mensajes.push(req.body)
+
+    res.json("Se agrega nuevo mensaje")
 })
 
+app.put("/api/mensajes/:id", (req, res) => {  
+    console.log("PUT recibido")
+    console.log(req.body)
+
+    res.json("Actualizar nuevo mensaje " + req.params.id)
+})
+
+app.delete("/api/mensajes/:id", (req, res) => {  
+    console.log("DEL recibido")
+    console.log(req.body)
+
+    res.json("Borrando mensaje " + req.params.id)
+})
 
 
 app.listen(8080)

@@ -1,0 +1,17 @@
+Clase 09 - Motores de plantilla
+----
+1. Concepto MVC (Modelo Vista Controlador):
+
+    Este patrón trata de separar los datos de su presentación. Por decirlo en términos web, separa el código del programador del código deldiseñador web.
+
+2. Ventajas de utilizar un motor de plantilla:
+
+    El código resultante es más organizado, y tiene garantía de que no habrá HTNL mal formado. 
+
+    Podemos separar nuestro equipo en dos, al trabajar interfaces de usuario sin necesidad de desarrollar en Back-End.
+
+    Los motores de plantilla nos permiten reutilizar secciones de código ayudando así a mantener nuestro proyecto optimizado.
+
+    Existen muchas utilidades que nos ayudan a dotar de mejor interacción a la parte visual de nuestras aplicaciones.
+
+    Con los motores de plantillas podemos separar, optimizar y organizar nuestro código.

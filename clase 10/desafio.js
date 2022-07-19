@@ -7,8 +7,18 @@ app.set("view engine", "ejs")
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-const persona = []
+//Data Base:
+const personas = [] //Va a estar por defecto vacía
 
-app.get("/", (res, res) => {
-    res.render("desafio/index", { personas })
+app.get("/", (req, res) => {
+    res.render("desafio/index", {personas})
 })
+
+app.post("/personas", (req, res) => {
+    personas.push(req.body)
+    console.log(req.body, " added to personas");
+
+    res.render("desafio/index", {personas})
+})
+
+app.listen(8080)
